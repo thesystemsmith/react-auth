@@ -26,16 +26,16 @@ export default function Register() {
             },
             headers :{}
         }
-        debugger
+        // debugger
         // make the api call
         axios(configuration)
             .then(result => {
-                debugger
+                // debugger
                 console.log(result)
                 setRegister(true);
             })
             .catch(error => {
-                debugger
+                // debugger
                 console.log(error)
             })
     }
