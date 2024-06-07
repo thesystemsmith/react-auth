@@ -7,12 +7,12 @@ export default function Login() {
             <h2>Login</h2>
             <Form>
                 {/* email */}
-                <Form.Group controlId='formBasicEmail'>
+                <Form.Group controlId='formBasicEmail1'>
                     <Form.Label> Email </Form.Label>
                     <Form.Control type='email' placeholder='Email'/> 
                 </Form.Group>
                 {/* password */}
-                <Form.Group controlId='formBasicPassword'>
+                <Form.Group controlId='formBasicPassword1'>
                     <Form.Label> Password </Form.Label>
                     <Form.Control type='password' placeholder='Password'/> 
                 </Form.Group>

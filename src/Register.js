@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import { Form, Button } from 'react-bootstrap';
+import axios from 'axios';
 
 export default function Register() {
     // State declarations
@@ -12,13 +13,38 @@ export default function Register() {
         // prevent the form from refreshing the whole page
         e.preventDefault();
         // make a popup alert showing the "submitted" text
-        alert("Submited");
+        // alert("Submited");
+        
+        // set config
+        const configuration = {
+            method: 'post',
+            // url: 'https://nodejs-mongo-auth.onrender.com',
+            url:'http://localhost:3000/register',
+            data: {
+                email,
+                password
+            },
+            headers :{}
+        }
+        debugger
+        // make the api call
+        axios(configuration)
+            .then(result => {
+                debugger
+                console.log(result)
+                setRegister(true);
+            })
+            .catch(error => {
+                debugger
+                console.log(error)
+            })
     }
 
     return (
         <>
             <h2>Register</h2>
             <Form onSubmit={(e)=>handleSubmit(e)}>
+
                 {/* email */}
                 <Form.Group controlId='formBasicEmail'>
                     <Form.Label> Email </Form.Label>
@@ -30,6 +56,7 @@ export default function Register() {
                         placeholder='Email'
                     /> 
                 </Form.Group>
+
                 {/* password */}
                 <Form.Group controlId='formBasicPassword'>
                     <Form.Label> Password </Form.Label>
@@ -41,6 +68,7 @@ export default function Register() {
                         placeholder='Password'
                     /> 
                 </Form.Group>
+
                 {/*submit button */}
                 <Button 
                     variant='primary' 
@@ -49,7 +77,16 @@ export default function Register() {
                 >
                     Register
                 </Button>
+
+                {/* display success message */}
+                {register ? (
+                    <p className="text-success">You Are Registered Successfully</p>
+                ) : (
+                    <p className="text-danger">You Are Not Registered</p>
+                )}
+
             </Form>
         </>
     )
 }
+
