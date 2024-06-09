@@ -18,8 +18,8 @@ export default function Register() {
         // set config
         const configuration = {
             method: 'post',
-            // url: 'https://nodejs-mongo-auth.onrender.com/register',
-            url:'http://localhost:3000/register',
+            url: 'https://nodejs-mongo-auth.onrender.com/register',
+            // url:'http://localhost:3000/register',
             data: {
                 email,
                 password

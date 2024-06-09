@@ -17,8 +17,8 @@ export default function Login() {
         // set config
         const configuration = {
             method:'post',
-             // url: 'https://nodejs-mongo-auth.onrender.com/login',
-            url: 'http://localhost:3000/login',
+            url: 'https://nodejs-mongo-auth.onrender.com/login',
+            // url: 'http://localhost:3000/login',
             data:{
                 email,
                 password
